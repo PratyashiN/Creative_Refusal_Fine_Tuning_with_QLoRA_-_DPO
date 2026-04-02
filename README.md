@@ -1,4 +1,4 @@
-# 🛡️ Creative Refusal LLM
+# Creative Refusal LLM
 ### QLoRA + SFT + DPO Fine-Tuning Pipeline
 
 > A lightweight fine-tuning pipeline for aligning language models to produce **safe, witty, and human-like refusals** instead of generic robotic responses.
@@ -7,7 +7,7 @@ This project uses **QLoRA**, **Supervised Fine-Tuning (SFT)**, and **Direct Pref
 
 ---
 
-## 📌 Core Overview
+## Core Overview
 
 This system trains a base language model to improve **how it refuses** unsafe or harmful queries.
 
@@ -17,40 +17,40 @@ Instead of bland responses like:
 ```
 
 The model learns to generate responses that are:
-- ✅ Context-aware
-- ✅ Slightly engaging & witty
-- ✅ Safe and policy-compliant
+-  Context-aware
+-  Slightly engaging & witty
+-  Safe and policy-compliant
 
 The pipeline is designed to run efficiently on **limited hardware** (e.g., free Google Colab GPU) using 4-bit quantization and parameter-efficient fine-tuning.
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### ⚡ QLoRA-based Training
+###  QLoRA-based Training
 - Loads the base model in **4-bit precision** using BitsAndBytes
 - Significantly reduces GPU memory usage
 - Enables fine-tuning on low-resource setups
 
-### 🔧 Parameter-Efficient Fine-Tuning (LoRA)
+###  Parameter-Efficient Fine-Tuning (LoRA)
 - Adds low-rank adapter layers to attention modules
 - Trains only **~0.1% of total parameters**
 
-### 🎓 Supervised Fine-Tuning (SFT)
+###  Supervised Fine-Tuning (SFT)
 - Trains on high-quality "chosen" responses
 - Teaches tone and structure of ideal replies
 
-### 🏆 Direct Preference Optimization (DPO)
+###  Direct Preference Optimization (DPO)
 - Uses **(chosen vs. rejected)** response pairs
 - Aligns the model toward preferred responses without a reward model
 
-### 🪶 Lightweight Pipeline
+### Lightweight Pipeline
 - Runs entirely in a **single Colab notebook**
 - No heavy infrastructure required
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 | Component | Description |
 |---|---|
@@ -63,7 +63,7 @@ The pipeline is designed to run efficiently on **limited hardware** (e.g., free 
 
 ---
 
-## 🔄 Training Pipeline
+##  Training Pipeline
 
 ```
 prompt + (chosen, rejected)
@@ -78,12 +78,12 @@ prompt + (chosen, rejected)
     fine-tuned model
           │
           ▼
-  witty + safe responses ✅
+  witty + safe responses 
 ```
 
 ---
 
-## 📂 Dataset Format
+## Dataset Format
 
 Each training example contains three fields:
 
@@ -104,7 +104,7 @@ Each training example contains three fields:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
@@ -124,7 +124,7 @@ wandb.login() # Weights & Biases token
 
 ---
 
-## ⚙️ Model Configuration
+##  Model Configuration
 
 | Parameter | Value |
 |---|---|
@@ -135,7 +135,7 @@ wandb.login() # Weights & Biases token
 
 ---
 
-## 📤 Output
+##  Output
 
 After training, models are saved to:
 
@@ -146,7 +146,7 @@ After training, models are saved to:
 
 ---
 
-## 📊 Expected Results
+## Expected Results
 
 | Model | Behavior |
 |---|---|
@@ -156,7 +156,7 @@ After training, models are saved to:
 
 ---
 
-## ⚠️ Known Limitations
+##  Known Limitations
 
 - Small dataset limits generalization across diverse prompts
 - No RLHF stage included in current pipeline
@@ -164,7 +164,7 @@ After training, models are saved to:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - [ ] Expand dataset to 500+ samples with diverse categories
 - [ ] Add quantitative evaluation metrics (e.g., reward model scoring)
@@ -173,10 +173,10 @@ After training, models are saved to:
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source. Feel free to fork, fine-tune, and build on it.
 
 ---
 
-> *Built with 💙 using Hugging Face Transformers, PEFT, TRL, and BitsAndBytes.*
+> *Built with  using Hugging Face Transformers, PEFT, TRL, and BitsAndBytes.*
